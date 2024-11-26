@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHL Team Information</title>
+</head>
+
+<body>
+    <h1>Welcome! Get Information About Your Favorite NHL Team</h1>
+    <style>
+        h1 {
+            font-family: "Victoria SC", Serif;
+            margin: 20px auto;  
+        }
+
+        img {
+            position: absolute;
+            top: 10px;
+            right: 50px;
+            height: 100px;
+        }
+    </style>
+    <img src="images/NHL-Logo.jpg" alt="Image of NHL Logo" height="100" />
+    <form action="/nhlteaminfo" method="post">
+        <label for="team_name">Enter Team Name:</label> 
+        <input type="text" id="team_name" name="team_name" placeholder="i.e. Boston Bruins...">
+        <button type="submit">Get Info</button>
+    </form>
+
+</body>
+
+</html>
+
+
+
+
