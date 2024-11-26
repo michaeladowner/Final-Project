@@ -41,7 +41,7 @@ async def team_info(request: Request):
                 "team_name": team_info["displayName"],
                 "abbreviation": team_info["abbreviation"],
                 "location": team_info["location"],
-                "primary color": team_info["color"],
+                "primary_color": team_info["color"],
                 "alternate_color": team_info["alternateColor"],
             },
         )
