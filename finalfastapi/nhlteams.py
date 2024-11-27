@@ -5,7 +5,7 @@ import pprint
 
 def get_data_from_url(url):
     """
-    Get data from a URL and handle potential errors.
+    This function attempts to get data from the provided URL and handles potential errors.
     """
     try:
         with urllib.request.urlopen(url) as response:
@@ -24,41 +24,47 @@ def get_data_from_url(url):
 
 
 def get_team_info_by_name(team_name):
-    """Retreives information about a specified NHL team using the team's display name as an input (e.g., 'Boston Bruins')
+    """
+    Retrieve information about a specified NHL team.
 
-    team_name (str): The display name of the NHL team (e.g., 'Boston Bruins').
+    This function fetches data from the ESPN API and searches for the team
+    information based on the provided display name from the user.
 
+    Key Argument:
+        team_name (str): The display name of the NHL team (e.g., 'Boston Bruins').
+
+    Returns:
+        dict: A dictionary containing the team's information, or None if not found.
     """
 
     api_url = "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams"  # Assign api_url to the external ESPN API URL
 
-    data = get_data_from_url(
-        api_url
-    )  # Get data from the API URL and store returned data in data
+    # Get data from the API URL and store returned data in data
+    data = get_data_from_url(api_url)
 
-    # if data is None:
-    #    print("No data retrieved from the API.")
-    #    return None
-
-    # Search through the API using loops, for the specified NHL team's information using the display name
+    # Search through the API response for the specified NHL team's information using the display name
     for sport in data["sports"]:
         for league in sport["leagues"]:
             for team in league["teams"]:
-                if (
-                    team["team"]["displayName"].lower() == team_name.lower()
-                ):  # check if the displayName of the team matches the team_name provided by the user by being case sensitive
+                if team["team"]["displayName"].lower() == team_name.lower():
                     return team["team"]  # Return the team data if found
-
-    # print(f"'{team_name}' not found in external NHL API.") #if the team name is not found in the API
-    # return None
 
 
 def main():
     """
     Main function to drive the program.
-    Prompts the user to enter a NHL team name and stores the user input in team_name
+
+    This function prompts the user to enter an NHL team name and retrieves
+    information about the specified team. It then displays the team's name,
+    abbreviation, location, and colors if the information is found.
+
+    The user is prompted to input the team name, which is then passed to
+    the `get_team_info_by_name` function to retrieve the data.
+
+    Returns:
+        None
     """
-    team_name = input("Enter a NHL team (e.g., 'Boston Bruins'):") 
+    team_name = input("Enter a NHL team (e.g., 'Boston Bruins'):")
     team_info = get_team_info_by_name(team_name)  # return information about the team
 
     # If the team_info is not empty and contains data, print out retrieved information about the team

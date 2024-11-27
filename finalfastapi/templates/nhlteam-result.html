@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NHL Team Information</title>
+    <link rel="stylesheet" href="/css/styles.css" />
 </head>
 
 <body>
-    <h1>NHL Team Information</h1>
-    <p>Team: {{team_name }}</p>
-    <p>Abbreviation: {{ abbreviation }}</p>
-    <p>Location: {{ location }}</p>
-    <p>Primary Team Color: {{ primary_color }}</p>
-    <p>Alternate Team Color: {{ alternate_color }}</p>
+    <h1 class="title">
+        <img src="/images/NHL-Logo.jpg" alt="Image of NHL Logo" height="100" class="logo-left" />
+        NHL Team Information
+        <img src="/images/NHL-Logo.jpg" alt="Image of NHL Logo" height="100" class="logo-right" />
+    </h1>
+    <p><strong>Team:</strong> {{team_name }}</p>
+    <p><strong>Abbreviation:</strong> {{ abbreviation }}</p>
+    <p><strong>Location:</strong> {{ location }}</p>
+    <p><strong>Primary Team Color:</strong> {{ primary_color }}</p>
+    <p><strong>Alternate Team Color:</strong> {{ alternate_color }}</p>
 </body>
 
 </html>
+

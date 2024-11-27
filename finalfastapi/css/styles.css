@@ -1,0 +1,75 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/003/386/400/non_2x/ice-hockey-arena-background-concept-free-vector.jpg);
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Link Styles */
+a {
+    display: inline-block;
+    /* Allows padding to apply */
+    margin-top: 20px;
+    padding: 10px 15px;
+    text-decoration: none;
+    /* Remove underline on link */
+    background-color: #007bff;
+    color: rgb(255, 254, 254);
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styles */
+form {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    /* Display label on a new line */
+    margin-bottom: 8px;
+    color: #000911;
+    font-weight: bold;
+    /* Make label bold */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
