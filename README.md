@@ -1,4 +1,4 @@
-### Michaela Downer Final-Project 
+# Michaela Downer Final-Project 
 NHL Team Search Web Application 
 
 ## 1. Project Overview
@@ -7,27 +7,27 @@ I created a NHL Team Search Web Application using FastAPI, and the purpose of th
 ## 2. Usage Guidelines
 Users can interact with my application by following the steps outlined below: 
 
-# Acessing the Application:
+### Acessing the Application:
 Users can begin their interaction by navigating to the NHL search page using their web browser at the URL (http://127.0.0.1:8000/nhlteamsearch).
 
-# Viewing the Search Form:
+### Viewing the Search Form:
 The application renders an HTML page from nhlteam-form.html that displays a search form prompting users to enter the name of an NHL team.
 
-# Input Requirements:
+### Input Requirements:
 Users are required to enter valid NHL team name as input in the text field, and will see a placeholder text that indicates the expected format i.e. Boston Bruins. The input is case-insensitive. 
 
-# Submitting the Form:
+### Submitting the Form:
 After entering the team name, users click the “Get Info” button to submit the form. This triggers an HTTP POST request to the /nhlteaminfo endpoint with the provided team name. If a user attempts to submit the form with the input field blank, an alert will appear letting the user know that they need to enter a team name. 
 
-# Processing the Request:
+### Processing the Request:
 Upon submission, the application processes the request in the team_info function, retrieves the input from the form, and uses the get_team_info_by_name function from the nhlteams.py module to fetch relevant data about the specified team.
 
-# Displaying Results:
+### Displaying Results:
 If the Team is Found: The application displays a results page nhlteam-result.html detailing the team’s information, such as the team name, abbreviation, location, primary color, and alternate color.
 
 If the Team is Not Found: If the specified team does not exist, the application redirects the user to a “Team Not Found” page nhlteam-not-found.html, informing them that the team could not be located and gives the user the option to navigate back to the search page.
 
-# Handling Not Found Errors:
+### Handling Not Found Errors:
 If a user attempt to access a non-existent URL, a custom 404 error page is displayed, providing a message saying "Sorry, Not Found! 😭".
 
 ## 3. Dependencies 
@@ -48,19 +48,19 @@ CSS/HTML/JavaScript: I used these tools to enhance the user's experience when na
 ## 4. Project Stucture 
 My project is structed as followed: 
 
-# Key File: 'main.py'
+### Key File: 'main.py'
 This file is part of the back end of my project and is the main entry point for my FastAPI application. It defines the FastAPI app, includes route handlers GET and POST for managing user requests and returning responses, and contains 404 error handling. 
 
-# Key File: 'nhlteams.py'
+### Key File: 'nhlteams.py'
 This file is also part of the back end of my application, and is a separate module that contains all logic related to NHL teams. This includes retreiving data from my external API, processing the information, and providing the function, 'get_team_info_by_name' used in my FastAPI routes.
 
-# Key Directory: 'templates'
+### Key Directory: 'templates'
 This directory holds my HTML files used by FastAPI for rendering responses and contains the front-end of my application. Inside this directory contains the following:
     -nhlteam-form.html: The HTML form where users input an NHL team.
     -nhlteam-result.html: This HTML page is used to display the team information if the team entered by the user is sucessfully found. 
     -nhlteam-not-found.html: This HTML page returns a "team not found" message for cases where the team name entered by the user cannot be found in the NHL API. 
 
-# Key Directory: 'css'
+### Key Directory: 'css'
 This directory holds a file named styles.css and contains the CSS styles used to enhance the appearance of the HTML pages. 
 
 ## 5. Acknowledgements

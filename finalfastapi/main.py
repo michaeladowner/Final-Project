@@ -10,7 +10,8 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 app.mount("/css", StaticFiles(directory="css"), name="css")
-app.mount("/images", StaticFiles(directory="images"), name="images") 
+app.mount("/images", StaticFiles(directory="images"), name="images")
+
 
 @app.get("/nhlteamsearch", response_class=HTMLResponse)
 async def searchpage(request: Request):
@@ -95,4 +96,4 @@ def custom_404(request, e):
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True) 
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
